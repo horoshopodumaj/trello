@@ -1,9 +1,13 @@
-import { useState } from "react";
+import Center from "./components/Center";
+import Header from "./components/Header";
 
 function App() {
-    const [count, setCount] = useState(0);
-
-    return <div className="">App</div>;
+    return (
+        <div className="">
+            <Header />
+            <Center />
+        </div>
+    );
 }
 
 export default App;
