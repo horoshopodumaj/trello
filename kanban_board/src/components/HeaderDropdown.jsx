@@ -6,7 +6,7 @@ import boardIcon from "../assets/icon-board.svg";
 import darkIcon from "../assets/icon-dark-theme.svg";
 import lightIcon from "../assets/icon-light-theme.svg";
 
-const HeaderDropdown = ({ setOpenDropDown }) => {
+const HeaderDropdown = ({ setOpenDropDown, setBoardModalOpen }) => {
     const [colorTheme, setColorTheme] = useDarkMode();
     const [darkside, setDarkSide] = useState(colorTheme === "light" ? true : false);
 
@@ -35,7 +35,12 @@ const HeaderDropdown = ({ setOpenDropDown }) => {
                             <p className=" text-lg font-bold">{board.name}</p>
                         </div>
                     ))}
-                    <div className=" flex items-baseline space-x-2 text-[#635fc7] px-5 py-4 cursor-pointer">
+                    <div
+                        className=" flex items-baseline space-x-2 text-[#635fc7] px-5 py-4 cursor-pointer"
+                        onClick={() => {
+                            setBoardModalOpen(true);
+                            setOpenDropDown(false);
+                        }}>
                         <img src={boardIcon} alt="boardIcon" className=" h-4" />
                         <p className=" text-lg font-bold">Create New Board</p>
                     </div>
