@@ -27,8 +27,8 @@ const boardSlice = createSlice({
             state.splice(state.indexOf(board), 1);
         },
         setBoardActive: (state, action) => {
-            state.map((board) => {
-                board.id === action.payload.index ? (board.isActive = true) : (board.isActive = false);
+            state.map((board, index) => {
+                index === action.payload.index ? (board.isActive = true) : (board.isActive = false);
                 return board;
             });
         },
