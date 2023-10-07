@@ -3,7 +3,7 @@
         {
             "name": "Platform Launch",
             "id": 1,
-            "isActive": true,
+            "isActive": false,
             "columns": [
                 {
                     "name": "Todo",
