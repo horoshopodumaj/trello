@@ -6,12 +6,23 @@ import boardsSlice from "../redux/boardSlice";
 
 const AddEditBoardModal = ({ setBoardModalOpen, type }) => {
     const dispatch = useDispatch();
+    const [isFirstLoad, setIsFirstLoad] = useState(true);
     const [name, setName] = useState("");
     const [newColumns, setNewColumns] = useState([
         { name: "Todo", task: [], id: uuidv4() },
         { name: "Doing", task: [], id: uuidv4() },
     ]);
     const [isValid, setIsValid] = useState(true);
+
+    if (type === "edit" && isFirstLoad) {
+        setNewColumns(
+            board.columns.map((col) => {
+                return { ...col, id: uuidv4() };
+            })
+        );
+        setName(board.name);
+        setIsFirstLoad(false);
+    }
 
     const validate = () => {
         setIsValid(false);
