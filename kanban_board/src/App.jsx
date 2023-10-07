@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Center from "./components/Center";
+import EmptyBoard from "./components/EmptyBoard";
 import Header from "./components/Header";
 import boardsSlice from "./redux/boardSlice";
 
@@ -13,9 +14,19 @@ function App() {
     if (!activeBoard && boards.length > 0) dispatch(boardsSlice.actions.setBoardActive({ index: 0 }));
 
     return (
-        <div className="">
-            <Header isBoardModalOpen={isBoardModalOpen} setIsBoardModalOpen={setIsBoardModalOpen} />
-            <Center />
+        <div className=" overflow-hidden overflow-x-scroll">
+            <>
+                {boards.length > 0 ? (
+                    <>
+                        <Header isBoardModalOpen={isBoardModalOpen} setIsBoardModalOpen={setIsBoardModalOpen} />
+                        <Center />
+                    </>
+                ) : (
+                    <>
+                        <EmptyBoard type="add" />
+                    </>
+                )}
+            </>
         </div>
     );
 }
