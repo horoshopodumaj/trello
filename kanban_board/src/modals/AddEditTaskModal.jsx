@@ -134,8 +134,8 @@ function AddEditTaskModal({ type, device, setIsTaskModalOpen, setIsAddTaskModalO
                 <div className="mt-8 flex flex-col space-y-3">
                     <label className="  text-sm dark:text-white text-gray-500">Subtasks</label>
 
-                    {subtasks.map((subtask, index) => (
-                        <div key={index} className=" flex items-center w-full ">
+                    {subtasks.map((subtask) => (
+                        <div key={subtask.id} className=" flex items-center w-full ">
                             <input
                                 onChange={(e) => {
                                     onChangeSubtasks(subtask.id, e.target.value);
@@ -170,8 +170,8 @@ function AddEditTaskModal({ type, device, setIsTaskModalOpen, setIsAddTaskModalO
                         value={status}
                         onChange={onChangeStatus}
                         className=" select-status flex-grow px-4 py-2 rounded-md text-sm bg-transparent focus:border-0  border-[1px] border-gray-300 focus:outline-[#635fc7] outline-none">
-                        {columns.map((column, index) => (
-                            <option key={index}>{column.name}</option>
+                        {columns.map((column) => (
+                            <option key={column.id}>{column.name}</option>
                         ))}
                     </select>
                     <button

@@ -89,8 +89,8 @@ function AddEditBoardModal({ setIsBoardModalOpen, type }) {
                 <div className="mt-8 flex flex-col space-y-3">
                     <label className=" text-sm dark:text-white text-gray-500">Board Columns</label>
 
-                    {newColumns.map((column, index) => (
-                        <div key={index} className=" flex items-center w-full ">
+                    {newColumns.map((column) => (
+                        <div key={column.id} className=" flex items-center w-full ">
                             <input
                                 className=" bg-transparent flex-grow px-4 py-2 rounded-md text-sm  border-[0.5px] border-gray-600 focus:outline-[#635fc7] outline-[1px]  "
                                 onChange={(e) => {
