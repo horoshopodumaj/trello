@@ -9,7 +9,7 @@ import AddEditTaskModal from "../modals/AddEditTaskModal";
 import DeleteModal from "../modals/DeleteModal";
 import boardsSlice from "../redux/boardSlice";
 import ElipsisMenu from "./ElipsisMenu";
-import HeaderDropDown from "./HeaderDropDown";
+import HeaderDropDownComponent from "./HeaderDropdownComponent";
 
 function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
     const [openDropdown, setOpenDropdown] = useState(false);
@@ -88,7 +88,7 @@ function Header({ setIsBoardModalOpen, isBoardModalOpen }) {
                     {isElipsisMenuOpen && <ElipsisMenu type="Boards" setOpenEditModal={setOpenEditModal} setOpenDeleteModal={setOpenDeleteModal} />}
                 </div>
 
-                {openDropdown && <HeaderDropDown setOpenDropdown={setOpenDropdown} setIsBoardModalOpen={setIsBoardModalOpen} />}
+                {openDropdown && <HeaderDropDownComponent setOpenDropdown={setOpenDropdown} setIsBoardModalOpen={setIsBoardModalOpen} />}
             </header>
             {isTaskModalOpen && <AddEditTaskModal setIsAddTaskModalOpen={setIsTaskModalOpen} type="add" device="mobile" />}
 

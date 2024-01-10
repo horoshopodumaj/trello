@@ -7,7 +7,7 @@ import lightIcon from "../assets/icon-light-theme.svg";
 import useDarkMode from "../hooks/useDarkMode";
 import boardsSlice from "../redux/boardSlice";
 
-function HeaderDropDown({ setOpenDropdown, setIsBoardModalOpen }) {
+function HeaderDropDownComponent({ setOpenDropdown, setIsBoardModalOpen }) {
     const dispatch = useDispatch();
     const [colorTheme, setTheme] = useDarkMode();
     const [darkSide, setDarkSide] = useState(colorTheme === "light" ? true : false);
@@ -70,4 +70,4 @@ function HeaderDropDown({ setOpenDropdown, setIsBoardModalOpen }) {
     );
 }
 
-export default HeaderDropDown;
+export default HeaderDropDownComponent;
